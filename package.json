@@ -1,0 +1,19 @@
+{
+  "name": "heroku-pipelines-nightwatch",
+  "version": "1.0.0",
+  "description": "A little example how to use nighwatch with heroku pipelines.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimonBerlin/heroku-pipelines-nightwatch.git"
+  },
+  "author": "Timon Bomke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TimonBerlin/heroku-pipelines-nightwatch/issues"
+  },
+  "homepage": "https://github.com/TimonBerlin/heroku-pipelines-nightwatch#readme"
+}
