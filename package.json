@@ -2,9 +2,11 @@
   "name": "heroku-pipelines-nightwatch",
   "version": "1.0.0",
   "description": "A little example how to use nighwatch with heroku pipelines.",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/TimonBerlin/heroku-pipelines-nightwatch/issues"
   },
-  "homepage": "https://github.com/TimonBerlin/heroku-pipelines-nightwatch#readme"
+  "homepage": "https://github.com/TimonBerlin/heroku-pipelines-nightwatch#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nightwatch": "^1.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
