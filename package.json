@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo I am always green. && exit 0",
     "start": "node ./src/index.js",
-    "e2e:heroku": "node ./src/e2e/herokuE2ERunner.js",
+    "e2e:heroku": "node ./src/e2e/herokuTestRunner.js",
     "dev": "nodemon ./src/index.js"
   },
   "repository": {
