@@ -8,7 +8,7 @@ console.log(__dirname + 'static');
 
 let server = app.listen(PORT, () => {
   console.log(`Listening on port ${ PORT }!`);
-  // Telling the listeners that the server is ready.
+  // Notify the listeners when the server is ready.
   app.emit('listening', server);
 });
 
