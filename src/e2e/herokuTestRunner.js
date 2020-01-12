@@ -1,4 +1,5 @@
-const app = require('../backend/app');
+// Your express app file
+const app = require('../index');
 const path = require('path');
 const { spawn } = require('child_process');
 // Path to your nightwatch conifg

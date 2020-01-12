@@ -10,11 +10,10 @@
       "url": "https://github.com/heroku/heroku-buildpack-chromedriver"
     }
   ],
-  "scripts": {
-    "postdeploy": "npm run e2e:import"
-  },
   "environments": {
+    "test": {
       "scripts": {
+        "test-setup": "echo \"here you can define what will happen before the test runs\" && exit 0 ",
         "test": "npm run test && npm run e2e:heroku"
       }
     }
