@@ -4,8 +4,9 @@
   "description": "A little example how to use nighwatch with heroku pipelines.",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo I am always green. && exit 0",
     "start": "node ./src/index.js",
+    "e2e:heroku": "node ./src/e2e/herokuE2ERunner.js",
     "dev": "nodemon ./src/index.js"
   },
   "repository": {
