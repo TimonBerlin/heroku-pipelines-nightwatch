@@ -1,4 +1,4 @@
-# How to run your Nightwatch tests on Heroku Pipelines
+# How to run Nightwatch tests on Heroku Pipelines
 End-to-End testing is a very important part of every good continuous integration process and
 [Nightwatch.js](https://nightwatchjs.org/) is a great tool for that purpose.
 In this article, i will show you how you can easily integrate Nightwatch into your Heroku build pipeline.
