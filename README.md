@@ -15,7 +15,7 @@ With buildpacks you can specify how Heroku should setup the machine on which you
 If you want to know more about buildpacks you can have a look at the heroku 
 [documentation](https://devcenter.heroku.com/articles/buildpacks).
 
-For our purpose we need those three buildpacks:
+For our purpose we need three buildpacks:
 1. NodeJs to run our application
 2. Google Chrome to run our Nightwatch tests
 3. And the chromedriver so that Nightwatch can control the chrome browser
@@ -34,7 +34,7 @@ We simply do this by adding an 'app.json' file to the base of our Project and ad
 If you want to know more about what the 'app.json' does you can check out the documentation about it [here](https://devcenter.heroku.com/articles/app-json-schema)
 
 And that's it now we are done with the buildpack setup.
-##Create a Nightwatch config
+## Create a Nightwatch config
 Now that we have added the chrome driver and browser to our environment we need to tell Nightwatch where to find this. 
 We do this by creating a new Nightwatch configuration or add an environment to our existing one.
 
