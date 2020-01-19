@@ -2,10 +2,11 @@
 End-to-End testing is a very important part of every good continuous integration process and
 [Nightwatch.js](https://nightwatchjs.org/) is a great tool for that purpose.
 In this article, i will show you how you can easily integrate Nightwatch into your Heroku build pipeline.
-In this expample we are going to use nodeJs and express.
+In this expample we are going to use node and express.
 
 You can find the finished example project [here](https://github.com/TimonBerlin/heroku-pipelines-nightwatch)
 > "No amount of testing can prove a software right, a single test can prove a software wrong." 
+>
 >— Amir Ghahrai
 
 ## Having the right buildpacks
