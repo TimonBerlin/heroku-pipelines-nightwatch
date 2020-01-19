@@ -48,7 +48,7 @@ The buildpack which installs the chrome browser automatically adds an environmen
 
 And that’s it now we are done with the Nightwatch configuration file.
 
-```json
+```javascript
 { 
   "webdriver": {
     // Path to chromedriver which got installed over the buildpack.
