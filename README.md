@@ -35,10 +35,10 @@ If you want to know more about what the 'app.json' does you can check out the do
 
 And that's it now we are done with the buildpack setup.
 ## Create a Nightwatch config
-Now that we have added the chrome driver and browser to our environment we need to tell Nightwatch where to find this. 
-We do this by creating a new Nightwatch configuration or add an environment to our existing one.
+Now that we have added the chrome driver and browser to our environment we need to tell Nightwatch where to find those. 
+We do this by creating a new Nightwatch configuration or add an environment to an existing one.
 
-In this example, we will just create a new configuration file called 'nightwatch_heroku.conf.js' in the folder 'testEnvironment'.
+In this example, we will just create a new configuration file called 'nightwatch_heroku.conf.js'.
 
 To make everything work we have to add some configuration stuff.
 Under the webdriver key we have to specify the ‘server_path’. Here we are gonna add the directory to the chrome driver. When you use the suggested buildpack the default path to the driver is ‘/app/.chromedriver/bin/chromedriver’.
@@ -72,7 +72,7 @@ And that’s it now we are done with the Nightwatch configuration file.
 }
 ```
 
-##Preparing your index.js
+## Preparing your index.js
 Before we start testing we need some preparations on our index.js.
 
 At first we have to make sure that our app uses the right port.
@@ -108,7 +108,7 @@ If you are using any other framework then express you have to your own implement
 And that´s it! our index.js is ready now.
 In the next step, we will create a test runner script which now can wait until the app is`fully started before it will start with the tests.
 
-##Creating a test runner script
+## Creating a test runner script
 Next we have to create a Nightwatch runner.
 This runner will do the same thing as Nightwatch will do when you run it over the command line just in code.
 We create a new file called 'herokuTestRunner.js' in the 'e2e' folder.
@@ -159,7 +159,7 @@ app.on('listening', () => {
 });
 ```
 Now we have everything in place to run our Nightwatch tests!
-##Running the test automatically
+## Running the test automatically
 Everytime we build a branch on Heroku we want that our Nightwatch tests also runs.
 We simply have to add another npm script which will execute our test runner.
 Just add the following line to your package.json.
