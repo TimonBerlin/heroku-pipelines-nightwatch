@@ -73,15 +73,18 @@ And that’s it now we are done with the Nightwatch configuration file.
 ```
 
 ## Preparing your index.js
-Before we start testing we need some preparations on our index.js.
+Before we start testing we need to make some preparations on our index.js.
 
 At first we have to make sure that our app uses the right port.
 Heroku will automatically set an environment variable with the port we can use.
 So we just going to use that port or some default port for local testing.
+```javascript
+const PORT = process.env.PORT || 9080;
+```
 
 We also have to make sure our app will emit an event when the startup process is done.
 We doing this by simlply using the callback method from the listen function. After our app is
-listing on the desired port we just emit an simple event.  
+listing on the desired port we just emit an event.  
 
 ```javascript
 const express = require('express');
@@ -106,16 +109,16 @@ module.exports = app;
 If you are using any other framework then express you have to your own implementation for that.
 
 And that´s it! our index.js is ready now.
-In the next step, we will create a test runner script which now can wait until the app is`fully started before it will start with the tests.
+In the next step, we will create a test runner script which now can wait until the app is fully started before it will start with the tests.
 
 ## Creating a test runner script
 Next we have to create a Nightwatch runner.
 This runner will do the same thing as Nightwatch will do when you run it over the command line just in code.
-We create a new file called 'herokuTestRunner.js' in the 'e2e' folder.
+We create a new file called 'herokuTestRunner.js'.
 
 As you can see in the code below at first we wait till our app is emiting the 'listing' event.
 Now we know that the app is ready and we can start with the testing. This is done with the Nightwatch cli function.
-We just have to specify the path to our configuration file and pass it over the argv object.
+We just have to specify the path to our configuration file and pass it over the argv object like the path to our configuration file.
 
 
 In this object you can add any Nightwatch cli arguments. 
@@ -160,7 +163,7 @@ app.on('listening', () => {
 ```
 Now we have everything in place to run our Nightwatch tests!
 ## Running the test automatically
-Everytime we build a branch on Heroku we want that our Nightwatch tests also runs.
+Everytime we build a branch on Heroku we want to run our Nightwatch test as well.
 We simply have to add another npm script which will execute our test runner.
 Just add the following line to your package.json.
 ```json
@@ -183,7 +186,7 @@ This is done in the app.json. We simply add the following block.
 The "test-setup" script will run before our test run. You can add your custom test setups here.
 The "test" script defines which scripts will be run in the test step.
 
-So we just add our normal test there and also add our custom nightwatch script.
+So we just add our normal test there and also add our custom Nightwatch script.
 And that's it! Now when you trigger your heroku ci you should see your running Nightwatch tests running.
 
 
