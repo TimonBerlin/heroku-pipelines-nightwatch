@@ -120,9 +120,8 @@ We create a new file called `herokuTestRunner.js`.
 As you can see in the code below, at first we wait till our app is emiting the `listening` event.
 Now we know that the app is ready and we can start with the testing. This is done with the Nightwatch cli function.
 We just have to specify the path to our configuration file and pass it over in the `argv` object.
+In this object you can add any Nightwatch cli argument. 
 
-
-In this object you can add any Nightwatch cli arguments. 
 After that we start the test and define what will happen in case of errors or if all tests
 run successfully. If our test process terminates with anything else then zero, Heroku will
 mark this build as failed.
@@ -166,7 +165,7 @@ Now we have everything in place to run our Nightwatch tests!
 ## Running the test automatically
 Everytime we build a branch on Heroku we want to run our Nightwatch test as well.
 We simply have to add another npm script which will execute our test runner.
-Just add the following line to your `package.json.
+Just add the following line to your `package.json`.
 ```json
 // Just add the path to your test runner script here
 "e2e:heroku": "node ./src/e2e/herokuTestRunner.js",
@@ -194,7 +193,7 @@ And that's it! Now when you trigger your Heroku CI you should see your running N
 ## TL;DR
 If you don't have the time to read through all this, here are the basic steps:
 
-1. Add the buildpacks for Chrome and ChromeDriver to your `app.json
+1. Add the buildpacks for Chrome and ChromeDriver to your `app.json`
 2. Create a custom Nightwatch configuration for Heroku with the right paths to Chrome and ChromeDriver.
 3. Create an in code Nightwatch runner.
 4. Add an npm script to run your Heroku Nightwatch runner.
