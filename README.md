@@ -16,9 +16,9 @@ If you want to know more about buildpacks you can have a look at the Heroku
 [documentation](https://devcenter.heroku.com/articles/buildpacks).
 
 For our purpose we need three buildpacks:
-1. NodeJs to run our application
-2. Google Chrome to run our Nightwatch tests
-3. And the chromeDriver so that Nightwatch can control the Chrome browser
+1. NodeJs to run our application. [Link](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-nodejs)
+2. Google Chrome to run our Nightwatch tests. [Link](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-google-chrome)
+3. And the ChromeDriver so that Nightwatch can control the Chrome browser. [Link](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-chromedriver)
 
 We simply do this by adding an `app.json` file to the base of our Project and add the following block.
 
