@@ -39,15 +39,15 @@ That's it! Now we are already done with the buildpack setup.
 Now that we have added the ChromeDriver and browser to our environment we need to tell Nightwatch where to find those. 
 We do this by creating a new Nightwatch configuration or by adding an environment to an existing one.
 
-In this example, we will just create a new configuration file called `nightwatch_heroku.conf.js.
+In this example, we will just create a new configuration file called `nightwatch_heroku.conf.js`.
 
 To make everything work we have to add some configuration stuff.
-Under the webdriver key we have to specify the `server_path. Here we need to add the directory to the ChromeDriver. When you use the suggested buildpack the default path to the driver is ‘/app/.chromedriver/bin/chromedriver’.
+Under the webdriver key we have to specify the `server_path`. Here we need to add the directory to the ChromeDriver. When you use the suggested buildpack the default path to the driver is `/app/.chromedriver/bin/chromedriver`.
 
-We also have to add the path to the Chrome binary under ‘desiredCapabilities’.
+We also have to add the path to the Chrome binary under `desiredCapabilities`.
 The buildpack which installs the Chrome browser automatically adds an environment variable with the correct path so we can just use that.
 
-And that’s it now we are done with the Nightwatch configuration file.
+And that’s it! Now we have our Nightwatch configuration file.
 
 ```javascript
 { 
@@ -109,17 +109,17 @@ module.exports = app;
 
 If you are using any other framework than express, you have to find your own implementation for that.
 
-And that´s it! Our index.js is ready now.
+And that´s it! Our `index.js` is ready now.
 In the next step, we will create a test runner script which now can wait until the app is fully started before it will start with the tests.
 
 ## Creating a test runner script
 Next we have to create a Nightwatch runner.
-This runner will start Njghtwatch from the code.
+This runner will start Nightwatch from the code instead of the command line.
 We create a new file called `herokuTestRunner.js`.
 
 As you can see in the code below, at first we wait till our app is emiting the `listening` event.
 Now we know that the app is ready and we can start with the testing. This is done with the Nightwatch cli function.
-We just have to specify the path to our configuration file and pass it over the `argv` object like the path to our configuration file.
+We just have to specify the path to our configuration file and pass it over in the `argv` object.
 
 
 In this object you can add any Nightwatch cli arguments. 
